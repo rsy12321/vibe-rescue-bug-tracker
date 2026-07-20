@@ -15,9 +15,30 @@ A React and Supabase practice project for the seven-day Fiverr Vibe Coding troub
 
 - **Day 1 — React state and debugging:** built the local issue workflow and learned immutable state updates, form submission, filtering, and rendering.
 - **Day 2 — Supabase persistence and security:** added authentication, database persistence, and per-user RLS isolation.
-- **Day 3 — GitHub and Vercel deployment:** publish the project safely, diagnose a production-only environment failure, repair it, and verify the live application.
+- **Day 3 — GitHub and Vercel deployment:** published the project safely, diagnosed a production-only environment failure, repaired it, and verified the live application.
 
-The production URL will be added only after the Day 3 deployment passes acceptance.
+## Live deployment
+
+- Production: https://vibe-rescue-bug-tracker.vercel.app
+- Source branch: `main`
+- Hosting: Vercel Hobby through the GitHub integration
+
+Vercel needs these browser-safe variables in the Production and Preview environments:
+
+```text
+VITE_SUPABASE_URL
+VITE_SUPABASE_PUBLISHABLE_KEY
+```
+
+After adding or changing an environment variable, create a new deployment so Vite can include the new configuration in the browser bundle. Never add a Supabase Secret Key, `service_role` credential, or database password.
+
+Supabase Authentication URL Configuration must use the exact production URL as the Site URL. Keep the local development redirect and add the production redirect:
+
+```text
+Site URL: https://vibe-rescue-bug-tracker.vercel.app
+Redirect URL: http://127.0.0.1:5173/**
+Redirect URL: https://vibe-rescue-bug-tracker.vercel.app/**
+```
 
 ## Local setup
 
