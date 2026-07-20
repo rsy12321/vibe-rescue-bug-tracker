@@ -1,0 +1,263 @@
+:root {
+  color: #172033;
+  background: #eef2f7;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.app-shell {
+  width: min(760px, calc(100% - 32px));
+  margin: 48px auto;
+}
+
+.app-header,
+.auth-panel,
+.issue-form,
+.issue-card,
+.empty-state {
+  border: 1px solid #d9e0ea;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 12px 32px rgb(26 39 66 / 8%);
+}
+
+.app-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 32px;
+  background: linear-gradient(135deg, #14213d, #274c77);
+  color: #ffffff;
+}
+
+.auth-panel {
+  max-width: 520px;
+  margin: 80px auto 0;
+  padding: 32px;
+}
+
+.auth-panel h2 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.auth-panel > p {
+  color: #667085;
+  line-height: 1.6;
+}
+
+.auth-panel label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 750;
+}
+
+.auth-panel input {
+  width: 100%;
+  border: 1px solid #bdc9d8;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.auth-panel input:focus {
+  border-color: #2563eb;
+  outline: 3px solid rgb(37 99 235 / 15%);
+}
+
+.auth-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.header-button {
+  flex: 0 0 auto;
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 10px;
+  background: rgb(255 255 255 / 12%);
+  color: #ffffff;
+  padding: 10px 14px;
+  font-weight: 750;
+}
+
+[role="alert"] {
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  padding: 12px 14px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #a9def9;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
+
+.subtitle {
+  max-width: 560px;
+  margin: 12px 0 0;
+  color: #dceaf7;
+  line-height: 1.6;
+}
+
+.issue-form {
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.issue-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 750;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+}
+
+.form-row input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #bdc9d8;
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.form-row input:focus {
+  border-color: #2563eb;
+  outline: 3px solid rgb(37 99 235 / 15%);
+}
+
+.primary-button,
+.secondary-button,
+.filter-button {
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 750;
+}
+
+.primary-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  margin: 20px 0 12px;
+}
+
+.filter-button,
+.secondary-button {
+  border: 1px solid #c9d3df;
+  background: #ffffff;
+  color: #29364b;
+}
+
+.filter-button[aria-pressed="true"] {
+  border-color: #2563eb;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.issue-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.issue-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 20px;
+}
+
+.issue-card strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.status-open {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-resolved {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.empty-state {
+  margin: 0;
+  padding: 32px;
+  color: #667085;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    margin: 20px auto;
+  }
+
+  .app-header,
+  .auth-panel,
+  .issue-form {
+    padding: 20px;
+  }
+
+  .app-header,
+  .form-row,
+  .issue-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .auth-actions {
+    flex-direction: column;
+  }
+}
